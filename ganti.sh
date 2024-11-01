@@ -10,7 +10,7 @@ curl -s https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main/ips.
     # Mengubah kata sandi tanpa output menggunakan EOF
     /usr/bin/expect << EOF > /dev/null 2>&1
         set timeout 10
-        spawn ssh $USER@$HOST
+        spawn ssh $USER@$IP
         expect {
             "yes/no" { send "yes\r"; exp_continue }
             "password:" { send "$OLD_PASSWORD\r" }
