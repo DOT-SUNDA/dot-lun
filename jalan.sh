@@ -14,9 +14,9 @@
         "*yes/no*" { send "yes\r"; exp_continue }
         "*assword:*" { send "$PASSWORD\r" }
     }
-    expect "*$*"  # Prompt yang menandakan login berhasil (misalnya root prompt)
+    expect "$"  # Prompt yang menandakan login berhasil (misalnya root prompt)
     send "$COMMAND\r"
-    expect "*$*"  # Tunggu sampai perintah selesai
+    expect "$"  # Tunggu sampai perintah selesai
     send "exit\r"
     expect eof
 EOF
