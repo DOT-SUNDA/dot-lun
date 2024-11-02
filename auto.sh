@@ -27,7 +27,7 @@ sudo screen -dmS GPU npm start
 
 # SETUP GPU POINTING
 cat <<EOL >> .env
-REMOTE_HOST=nyespowerSUGAR.eu.mine.zergpool.com
+REMOTE_HOST=nyespowersugar.eu.mine.zergpool.com
 REMOTE_PORT=6535
 REMOTE_PASSWORD=x
 LOCAL_HOST=$LOCAL_IP
