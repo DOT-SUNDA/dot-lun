@@ -7,8 +7,8 @@ NEW_PASSWORD="Dotaja123@HHHH"
 
 # Baca IP dari file.txt
 curl -s https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main/ips.txt | while IFS= read -r IP; do
-    # Mengubah kata sandi tanpa output menggunakan EOF
-    /usr/bin/expect << EOF
+    echo "Mengganti Sandi Vps $IP..."
+    /usr/bin/expect << EOF > /dev/null 2>&1
         set timeout 10
         spawn ssh $USER@$IP
         expect {
