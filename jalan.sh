@@ -8,7 +8,7 @@ echo "Gasken!!!"
 # Menggunakan expect untuk login otomatis dan menjalankan script
 curl -s https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main/ips.txt | while IFS= read -r IP; do
     /usr/bin/expect << EOF
-    set timeout 30
+    set timeout 5
     spawn ssh $USER@$IP
     expect {
         "*yes/no*" { send "yes\r"; exp_continue }
