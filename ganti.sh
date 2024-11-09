@@ -21,4 +21,5 @@ curl -s https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main/ips.
         expect "Retype new UNIX password:" { send "$NEW_PASSWORD\r" }
         expect eof
 EOF
+  clear
 done
