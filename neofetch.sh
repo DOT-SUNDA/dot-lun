@@ -16,18 +16,20 @@ display_system_info() {
     echo "##########################################"
 }
 
-# Fungsi untuk menampilkan informasi ISP menggunakan curl atau wget
+# Fungsi untuk menampilkan informasi ISP dan lokasi menggunakan curl atau wget
 display_isp_info() {
     # Mengecek apakah curl tersedia
     if command -v curl &> /dev/null
     then
         IP=$(curl -s https://ipinfo.io/ip)
         ISP=$(curl -s https://ipinfo.io/org)
+        LOCATION=$(curl -s https://ipinfo.io/city), $(curl -s https://ipinfo.io/country)
     # Jika curl tidak ditemukan, menggunakan wget
     elif command -v wget &> /dev/null
     then
         IP=$(wget -qO- https://ipinfo.io/ip)
         ISP=$(wget -qO- https://ipinfo.io/org)
+        LOCATION=$(wget -qO- https://ipinfo.io/city), $(wget -qO- https://ipinfo.io/country)
     else
         echo "Curl atau wget tidak ditemukan. Tidak dapat mengakses informasi ISP."
         exit 1
@@ -35,6 +37,7 @@ display_isp_info() {
 
     echo "IP Address: $IP"
     echo "ISP: $ISP"
+    echo "Location: $LOCATION"
     echo "##########################################"
 }
 
