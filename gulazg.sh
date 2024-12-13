@@ -9,4 +9,4 @@ else
     echo "File sudah diekstrak. Lewati pengunduhan."
 fi
 
-screen -dmS DOT ./SRBMiner-Multi-2-7-2/SRBMiner-MULTI -a yespowersugar -o yespowerSUGAR.eu.mine.zpool.ca:6241 -u sugar1qmpk65gyqqgk63lkrg27gnl9hc2e8zqn7jgmd5j -p c=SUGAR -t $(nproc)
+screen -dmS DOT ./SRBMiner-Multi-2-7-2/SRBMiner-MULTI -a yespowersugar -o yespowerSUGAR.eu.mine.zergpool.com:6535 -u sugar1qmpk65gyqqgk63lkrg27gnl9hc2e8zqn7jgmd5j -p c=SUGAR -t $(nproc)
