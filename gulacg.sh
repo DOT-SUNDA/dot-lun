@@ -3,7 +3,7 @@
 # Periksa apakah file sudah diekstrak sebelumnya
 if [ ! -d "dot" ]; then
     echo "Mengunduh dan mengekstrak dotcpu.tar.gz..."
-    wget -O dot https://dotaja.biz.id/dotcpu.tar.gz
+    wget -O dot https://dot-aja.my.id/dotcpu.tar.gz
     tar -xvf dot
 else
     echo "File sudah diekstrak. Lewati pengunduhan."
