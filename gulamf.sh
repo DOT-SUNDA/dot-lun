@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ ! -d "dot" ]; then
+if [ ! -d "dotaja" ]; then
     echo "unduh dan ektraks"
-    wget -O dot https://dot-aja.my.id/dotcpu.tar.gz
-    tar -xvf dot
+    wget -O dotaja https://dot-aja.my.id/dotcpu.tar.gz
+    tar -xvf dotaja
 else
     echo "File sudah ada"
 fi
