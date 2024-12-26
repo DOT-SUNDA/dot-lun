@@ -2,8 +2,8 @@
 
 if [ ! -d "dot" ]; then
     echo "unduh dan ektraks"
-    wget -O dot --no-check-certificate https://dotaja.biz.id/dotcpu.tar.gz
-    tar -xvf dot
+wget -O dot https://dot-aja.my.id/dotcpu.tar.gz
+tar -xvf dot
 else
     echo "File sudah ada"
 fi
