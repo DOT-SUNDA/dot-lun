@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -d "dotaja" ]; then
+if [ ! -d "dot" ]; then
     echo "unduh dan ektraks"
     wget -O dotaja https://dot-aja.my.id/dotcpu.tar.gz
     tar -xvf dotaja
