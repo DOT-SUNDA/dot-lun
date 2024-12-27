@@ -13,8 +13,8 @@ npm install
 LOCAL_IP=$(hostname -I | awk '{print $1}')
 
 cat <<EOL >> .env
-REMOTE_HOST=yespowersugar.eu.mine.zergpool.com
-REMOTE_PORT=6535
+REMOTE_HOST=141.94.192.217
+REMOTE_PORT=7059
 REMOTE_PASSWORD=x
 LOCAL_HOST=$LOCAL_IP
 LOCAL_PORT=443
