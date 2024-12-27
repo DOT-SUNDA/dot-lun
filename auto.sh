@@ -1,10 +1,10 @@
 # INSTALL PERCOLIAN
-sudo apt update
-sudo apt install -y docker.io npm
+apt update
+apt install -y docker.io npm
 
 # MEMBUAT DAN INSTALL COLI
-mkdir Pointing
-cd Pointing
+mkdir mekj
+cd mekj
 git clone https://github.com/oneevil/stratum-ethproxy
 cd stratum-ethproxy
 npm install
