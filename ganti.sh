@@ -5,8 +5,15 @@ USER="cloudsigma"
 OLD_PASSWORD="Cloud2024"
 NEW_PASSWORD="Dotaja123@HHHH"
 
+if [ -z "$1" ]; then
+    echo "Penggunaan: $0 ip1,ip2,ip3"
+    exit 1
+fi
+
+IPS="$1"
+
 # Baca IP dari file.txt
-curl -s https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main/ips.txt | while IFS= read -r IP; do
+for IP in $IPS; do
     clear
     echo "Mengganti Sandi Vps $IP..."
     /usr/bin/expect << EOF > /dev/null 2>&1
