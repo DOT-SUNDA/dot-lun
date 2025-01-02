@@ -5,12 +5,7 @@ USER="cloudsigma"
 OLD_PASSWORD="Cloud2024"
 NEW_PASSWORD="Dotaja123@HHHH"
 
-if [ -z "$1" ]; then
-    echo "Penggunaan: $0 ip1,ip2,ip3"
-    exit 1
-fi
-
-IPS="$1"
+IPS="$0"
 
 # Baca IP dari file.txt
 for IP in $IPS; do
