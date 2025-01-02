@@ -1,10 +1,19 @@
 #!/bin/bash
-USER="cloudsigma"         # Menetapkan USER
-PASSWORD="Dotaja123@HHHH"   # Menetapkan PASSWORD
-COMMAND="pkill screen; nohup bash -c 'bash <(wget -qO- https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main/gulamf.sh)' > /dev/null 2>&1"
 
-# Menggunakan expect untuk login otomatis dan menjalankan script
-curl -s https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main/ips.txt | while IFS= read -r IP; do
+KON="$1"
+
+USER="cloudsigma"
+PASSWORD="Dotaja123@HHHH"
+BECEK="gulamf.sh"
+URLDOT="https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main"
+COMMAND="pkill screen; nohup bash -c 'bash <(wget -qO- $URLDOT/$BECEK)' $KON > /dev/null 2>&1"
+
+IPS="$0"
+
+IFS=',' read -ra IP_LIST <<< "$IPS"
+
+# Baca IP dari file.txt
+for IP in "${IP_LIST[@]}"; do
     clear
     echo "Is Running Worker $IP..."
     /usr/bin/expect << EOF > /dev/null 2>&1
