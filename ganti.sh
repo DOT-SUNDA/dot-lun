@@ -9,7 +9,6 @@ IPS="$0"
 
 # Baca IP dari file.txt
 for IP in $IPS; do
-    clear
     echo "Mengganti Sandi Vps $IP..."
     /usr/bin/expect << EOF > /dev/null 2>&1
         set timeout 10
