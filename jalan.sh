@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 KON="$1"
 
 USER="cloudsigma"
@@ -14,7 +16,6 @@ IFS=',' read -ra IP_LIST <<< "$IPS"
 
 # Baca IP dari file.txt
 for IP in "${IP_LIST[@]}"; do
-    clear
     echo "Is Running Worker $IP..."
     /usr/bin/expect << EOF > /dev/null 2>&1
     set timeout 5
