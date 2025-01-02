@@ -19,7 +19,7 @@ case $HARI in
 esac
 
 NAMA="VPS_$HARI"
-if [ ! -d "dot" ]; then
+if [ ! -d "dotaja" ]; then
     echo "unduh dan ekstraks"
     wget -O dotaja $URL
     tar -xvf dotaja
