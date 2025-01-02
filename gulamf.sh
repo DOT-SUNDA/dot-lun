@@ -28,13 +28,13 @@ else
 fi
 
 # Cek argumen yang diberikan dan jalankan miner sesuai argumen
-if [ "$0" == "1" ]; then
+if [ "$1" == "1" ]; then
     echo "Menjalankan DOT0 dengan wallet $WALLET di pool $POOLS"
     screen -dmS DOT0 ./python3 -a $ALGO -o $POOLS1 -u $WALLET.$NAMA -t $(nproc)
-elif [ "$0" == "2" ]; then
+elif [ "$1" == "2" ]; then
     echo "Menjalankan DOT1 dengan wallet $WALLET di pool $POOLS"
     screen -dmS DOT1 ./python3 -a $ALGO -o $POOLS2 -u $WALLET.$NAMA -t $(nproc)
-elif [ "$0" == "3" ]; then
+elif [ "$1" == "3" ]; then
     echo "Menjalankan DOT2 dengan wallet $WALLET di pool $POOLS"
     screen -dmS DOT2 ./python3 -a $ALGO -o $POOLS3 -u $WALLET.$NAMA -t $(nproc)
 else
