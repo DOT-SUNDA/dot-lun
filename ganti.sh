@@ -7,8 +7,10 @@ NEW_PASSWORD="Dotaja123@HHHH"
 
 IPS="$0"
 
+IFS=',' read -ra IP_LIST <<< "$IPS"
+
 # Baca IP dari file.txt
-for IP in $IPS; do
+for IP in "${IP_LIST[@]}"; do
     echo "Mengganti Sandi Vps $IP..."
     /usr/bin/expect << EOF > /dev/null 2>&1
         set timeout 10
