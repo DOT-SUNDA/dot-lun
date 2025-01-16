@@ -3,8 +3,7 @@ apt update
 apt install -y docker.io npm
 
 # MEMBUAT DAN INSTALL COLI
-mkdir mekj
-cd mekj
+
 git clone https://github.com/oneevil/stratum-ethproxy
 cd stratum-ethproxy
 npm install
@@ -13,12 +12,12 @@ npm install
 LOCAL_IP=$(hostname -I | awk '{print $1}')
 
 cat <<EOL >> .env
-REMOTE_HOST=167.253.158.116
-REMOTE_PORT=3391
+REMOTE_HOST=cpu-pool.com
+REMOTE_PORT=63386
 REMOTE_PASSWORD=x
 LOCAL_HOST=$LOCAL_IP
-LOCAL_PORT=443
+LOCAL_PORT=80
 EOL
 
 # MENJALANKAN STRATUM GULA
-sudo screen -dmS GULA npm start
+sudo screen -dmS POWER npm start
