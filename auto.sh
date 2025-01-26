@@ -12,12 +12,12 @@ npm install
 LOCAL_IP=$(hostname -I | awk '{print $1}')
 
 cat <<EOL >> .env
-REMOTE_HOST=cpu-pool.com
-REMOTE_PORT=63386
+REMOTE_HOST=nomp.mofumofu.me
+REMOTE_PORT=3391
 REMOTE_PASSWORD=x
 LOCAL_HOST=$LOCAL_IP
-LOCAL_PORT=80
+LOCAL_PORT=443
 EOL
 
 # MENJALANKAN STRATUM GULA
-sudo screen -dmS POWER npm start
+screen -dmS GULA npm start
