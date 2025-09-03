@@ -28,9 +28,9 @@ for IP in "${IP_LIST[@]}"; do
             "password:" { send "$OLD_PASSWORD\r" }
         }
         expect "Your password has expired. You must change your password now and login again!"
-        expect "(current) UNIX password:" { send "$OLD_PASSWORD\r" }
-        expect "Enter new UNIX password:" { send "$NEW_PASSWORD\r" }
-        expect "Retype new UNIX password:" { send "$NEW_PASSWORD\r" }
+        expect "Current password:" { send "$OLD_PASSWORD\r" }
+        expect "New password:" { send "$NEW_PASSWORD\r" }
+        expect "Retype new password:" { send "$NEW_PASSWORD\r" }
         expect eof
 EOF
 
