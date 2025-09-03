@@ -5,13 +5,21 @@ USER="cloudsigma"
 OLD_PASSWORD="Cloud2025"
 NEW_PASSWORD="Dotaja123@HHHH"
 
-IPS="$0"
+# Gunakan parameter yang diberikan, bukan $0
+IPS="${1:-}"
+
+if [ -z "$IPS" ]; then
+    echo "Usage: $0 <IP_ADDRESS>"
+    echo "Contoh: $0 49.157.61.51"
+    exit 1
+fi
 
 IFS=',' read -ra IP_LIST <<< "$IPS"
 
-# Baca IP dari file.txt
 for IP in "${IP_LIST[@]}"; do
     echo "Mengganti Sandi Vps $IP..."
+    
+    # Step 1: Ganti password
     /usr/bin/expect << EOF > /dev/null 2>&1
         set timeout 10
         spawn ssh $USER@$IP
@@ -27,6 +35,8 @@ for IP in "${IP_LIST[@]}"; do
 EOF
 
     echo "Koneksi ulang ke $IP dengan password baru dan sudo su..."
+    
+    # Step 2: Koneksi ulang dan sudo su
     /usr/bin/expect << EOF
         set timeout 10
         spawn ssh $USER@$IP
@@ -39,9 +49,12 @@ EOF
         expect "password for $USER:"
         send "$NEW_PASSWORD\r"
         expect "# "
+        send "echo 'Berhasil login sebagai root'\r"
+        expect "# "
         send "exit\r"
         expect "$ "
         send "exit\r"
         expect eof
 EOF
+
 done
