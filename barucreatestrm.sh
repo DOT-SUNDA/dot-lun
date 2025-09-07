@@ -20,7 +20,7 @@ for IP in "${IP_LIST[@]}"; do
     echo "Mengganti Sandi Vps $IP..."
     
     # Step 1: Ganti password
-    /usr/bin/expect << EOF > /dev/null 2>&1
+    /usr/bin/expect << EOF
         set timeout 10
         spawn ssh $USER@$IP
         expect {
@@ -49,7 +49,7 @@ EOF
         expect "password for $USER:"
         send "$NEW_PASSWORD\r"
         expect "# "
-        send "nohup bash -c \"sudo bash -c \\\"\$(curl -fsSL https://raw.githubusercontent.com/DOT-SUNDA/SOCKS/refs/heads/main/kontol.sh)\\\"\" > /tmp/output.log 2>&1 &\r"
+        send "wget -O mek https://raw.githubusercontent.com/DOT-SUNDA/SOCKS/refs/heads/main/kontol.sh && chmod +x mek && nohup ./mek devnull &\r"
         expect "# "
         send "exit\r"
         expect "$ "
